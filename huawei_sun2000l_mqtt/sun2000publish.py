@@ -5,6 +5,7 @@ try:
 except ModuleNotFoundError:
     print('Run setup.py first')
     exit()
+from lib import Huawei
 from lib.modbustcp import connect_bus, read_registers, close_bus
 import time
 import asyncio
@@ -272,9 +273,7 @@ if __name__ == '__main__':
     logformat = "%(asctime)s: %(message)s"
     logging.basicConfig(format=logformat, level=logging.INFO, datefmt="%H:%M:%S")
 
-    inverter_file = config.model
-    inverter_interface_definitions = __import__(inverter_file)
-    reg_map = inverter_interface_definitions.register_map
+    reg_map = Huawei.register_map
 
     topic_mqtt = 'sun2000l/results'
     client_mqtt = connect_mqtt()

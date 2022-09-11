@@ -6,7 +6,7 @@ except ModuleNotFoundError:
     exit()
 try:
     from configs import config_schedule
-except ModuleNotFoundError:
+except ImportError:
     print('Create configs/config_schedule.py first')
     exit()
 from paho.mqtt import client as mqtt_client
