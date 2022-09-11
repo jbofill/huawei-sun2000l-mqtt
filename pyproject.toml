@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "huawei-sun2000l-mqtt"
+version = "0.1.0"
+description = ""
+authors = ["Jordi Bofill <jordi.bofill@gmail.com>"]
+readme = "README.md"
+packages = [{include = "huawei_sun2000l_mqtt"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
