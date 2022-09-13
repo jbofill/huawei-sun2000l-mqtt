@@ -1,24 +1,4 @@
 # Solar Inverter Modbus Interface Definitions
-# https://support.huawei.com/enterprise/en/doc/EDOC1100113918?section=k002 (page 7 - 19 and 24 - 25)
-# file:///home/jordi/svn/arxiu/administracio/casa-vistaalegre/aparells/fotovoltaica/Solar Inverter Modbus Interface Definitions (V3.0).pdf
-
-# measurements:
-#  production: monitor (30 segons)
-#  production: work (1 min)
-#  status: alarm (5 min)
-#  status: status (1h)
-#  info: info (12h)
-#  info: equipment (once at start nodered)
-#  ignore: other, optimonitor (30 segons)
-#  work (1 min)
-#  alarm (5 min)
-#  status (1h)
-#  info (12h)
-#  equipment (once at start nodered)
-#  ignore: other, optimizers,  3fasemizers,  3fase
-# num: number in solar invert doc
-# fieldname: fieldname for influxdb, if blank uses register_map keyname
-
 import gettext
 from configs import config
 
