@@ -1,4 +1,6 @@
 import os
+from InquirerPy import inquirer
+from InquirerPy.validator import PathValidator
 import gettext
 try:
     from huawei_sun2000l_mqtt.configs import config
@@ -24,10 +26,15 @@ order_3 = ['equipment', 'info', 'monitor', 'work', 'work-extra', 'status', 'alar
 s_order = {v: i for i, v in enumerate(order_3)}
 lst_sorted_3 = sorted(data, key=lambda x: s_order[x[7]])
 
-dir_sensors = input('Sensors definition directory? [sensors]')
-out_dir_sensors = dir_sensors
-if not dir_sensors:
-    out_dir_sensors = 'sensors'
+home_path = "~/" if os.name == "posix" else "C:\\"
+dest_path = inquirer.filepath(
+    message="Path for subdirectories for sensor and button definitions:",
+    default=home_path,
+    validate=PathValidator(is_dir=True, message="Input is not a directory"),
+    only_directories=True,
+).execute()
+dir_sensors = inquirer.text(message="Sensors definition directory name:", default='sensors').execute()
+out_dir_sensors = os.path.join(dest_path, dir_sensors)
 if not os.path.isdir(out_dir_sensors):
     os.makedirs(out_dir_sensors)
 file = ''
@@ -79,10 +86,8 @@ print(out_dir_sensors)
 print(os.listdir(out_dir_sensors))
 print()
 
-dir_buttons = input('Buttons definition directory? [buttons]')
-out_dir_buttons = dir_buttons
-if not dir_buttons:
-    out_dir_buttons = 'buttons'
+dir_buttons = inquirer.text(message="Buttons definition directory name:", default='buttons').execute()
+out_dir_buttons = os.path.join(dest_path, dir_buttons)
 if not os.path.isdir(out_dir_buttons):
     os.makedirs(out_dir_buttons)
 file = ''
