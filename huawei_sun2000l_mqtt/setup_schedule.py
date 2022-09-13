@@ -44,7 +44,7 @@ def main():
 
     df = pd.DataFrame(r)
     t = df.transpose()
-    g = t.get(["name", "units", "measurement", "group"]).sort_values('group')
+    g = t.get(["description", "units", "measurement", "group"]).sort_values('group')
     select_group = set(g.to_dict(orient='list')['group'])
     group_choices = []
     for group in select_group:

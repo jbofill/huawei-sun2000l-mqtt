@@ -17,7 +17,7 @@ _ = language.gettext
 reg_map = Huawei.register_map
 data = []
 for k in reg_map.keys():
-    data.append([k, reg_map[k]['measurement'], reg_map[k]['fieldname'], reg_map[k]['name'], f"{reg_map[k]['measurement']}/{reg_map[k]['fieldname']}", reg_map[k]['units'],
+    data.append([k, reg_map[k]['measurement'], reg_map[k]['fieldname'], reg_map[k]['description'], f"{reg_map[k]['measurement']}/{reg_map[k]['fieldname']}", reg_map[k]['units'],
                  reg_map[k]['num'], reg_map[k]['group']])
 
 order_3 = ['equipment', 'info', 'monitor', 'work', 'work-extra', 'status', 'alarm', 'optimizers', '3fase', 'other']

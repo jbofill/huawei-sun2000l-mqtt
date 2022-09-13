@@ -22,8 +22,8 @@ df = pd.DataFrame(register_map)
 t = df.transpose()
 t.index.name = 'Sensor'
 t['mqtt publish'] = t['measurement']+'/'+t['fieldname']
-g = t.get(["name", "units", "mqtt publish", "measurement", "group"]).sort_values('group')
-m = t.get(["name", "units", "mqtt publish", "measurement", "group"]).sort_values('measurement')
+g = t.get(["description", "units", "mqtt publish", "measurement", "group"]).sort_values('group')
+m = t.get(["description", "units", "mqtt publish", "measurement", "group"]).sort_values('measurement')
 print()
 print(_('Sorted by group'))
 print(g.to_markdown())
