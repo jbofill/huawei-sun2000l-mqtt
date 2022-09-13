@@ -246,9 +246,9 @@ if config.use_wss:
     ssl_context.load_cert_chain(localhost_pem)
 
 
-async def client(data_query, grup_query):
+async def client(data_query, grp_query):
     response = read_inverter(data_query)
-    logging.debug(f'data_query: {data_query} grup_query: {grup_query} response: {response}')
+    logging.debug(f'data_query: {data_query} group_query: {grp_query} response: {response}')
     for x in response.keys():
         if x == 'P_active':
             response[x]['value'] = int(response[x]['value'] * 1000)  # change units to W
@@ -273,6 +273,7 @@ if __name__ == '__main__':
     logformat = "%(asctime)s: %(message)s"
     logging.basicConfig(format=logformat, level=logging.INFO, datefmt="%H:%M:%S")
 
+    inverter_interface_definitions = Huawei
     reg_map = Huawei.register_map
 
     topic_mqtt = 'sun2000l/results'
