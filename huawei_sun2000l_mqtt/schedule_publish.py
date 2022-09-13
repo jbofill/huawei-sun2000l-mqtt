@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 try:
-    from configs import config
+    from huawei_sun2000l_mqtt.configs import config
 except ModuleNotFoundError:
     print('Run setup.py first')
     exit()
 try:
-    from configs import config_schedule
+    from huawei_sun2000l_mqtt.configs import config_schedule
 except ImportError:
     print('Create configs/config_schedule.py first')
     exit()

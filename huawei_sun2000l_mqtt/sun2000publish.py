@@ -1,12 +1,12 @@
 # !/usr/bin/python3
 
 try:
-    from configs import config
+    from huawei_sun2000l_mqtt.configs import config
 except ModuleNotFoundError:
     print('Run setup.py first')
     exit()
-from lib import Huawei
-from lib.modbustcp import connect_bus, read_registers, close_bus
+from huawei_sun2000l_mqtt.lib import Huawei
+from huawei_sun2000l_mqtt.lib.modbustcp import connect_bus, read_registers, close_bus
 import time
 import asyncio
 import json

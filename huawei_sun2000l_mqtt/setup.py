@@ -14,7 +14,7 @@ language.install()
 _ = language.gettext
 
 try:
-    from configs import config
+    from huawei_sun2000l_mqtt.configs import config
 except ImportError:
     pass
 else:

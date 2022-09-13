@@ -1,11 +1,11 @@
 import gettext
-from lib.Huawei import register_map as r
+from huawei_sun2000l_mqtt.lib.Huawei import register_map as r
 import pandas as pd
 from InquirerPy import inquirer
 from InquirerPy.base.control import Choice
 from InquirerPy.validator import EmptyInputValidator
 from pprint import pprint
-from configs import config
+from huawei_sun2000l_mqtt.configs import config
 
 language = gettext.translation('messages', localedir='i18n', languages=[config.lang])
 language.install()

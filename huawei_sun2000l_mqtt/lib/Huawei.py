@@ -1,6 +1,6 @@
 # Solar Inverter Modbus Interface Definitions
 import gettext
-from configs import config
+from huawei_sun2000l_mqtt.configs import config
 
 language = gettext.translation('messages', localedir='i18n', languages=[config.lang])
 language.install()

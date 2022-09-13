@@ -4,11 +4,11 @@
 Grouped by measurements (inverter, panels, etc.) and by monitor group (status, wor, infor, etc.)."""
 
 try:
-    from configs import config
+    from huawei_sun2000l_mqtt.configs import config
 except ModuleNotFoundError:
     print('Run setup.py first')
     exit()
-from lib import Huawei
+from huawei_sun2000l_mqtt.lib import Huawei
 from tabulate import tabulate
 
 reg_map = Huawei.register_map

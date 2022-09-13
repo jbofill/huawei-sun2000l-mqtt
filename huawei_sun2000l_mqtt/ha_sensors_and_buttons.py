@@ -1,11 +1,11 @@
 import os
 import gettext
 try:
-    from configs import config
+    from huawei_sun2000l_mqtt.configs import config
 except ModuleNotFoundError:
     print('Run setup.py first')
     exit()
-from lib import Huawei
+from huawei_sun2000l_mqtt.lib import Huawei
 
 language = gettext.translation('messages', localedir='i18n', languages=[config.lang])
 language.install()
