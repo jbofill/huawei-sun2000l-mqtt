@@ -8,29 +8,26 @@ try:
 except ModuleNotFoundError:
     print('Run setup.py first')
     exit()
-from huawei_sun2000l_mqtt.lib import Huawei
+from huawei_sun2000l_mqtt.lib.Huawei import register_map
 from tabulate import tabulate
+import pandas as pd
+import gettext
+from huawei_sun2000l_mqtt.configs import config
 
-reg_map = Huawei.register_map
-data = []
-for k in reg_map.keys():
-    data.append([k, reg_map[k]['name'], f"{reg_map[k]['measurement']}/{reg_map[k]['fieldname']}", reg_map[k]['units'], reg_map[k]['group']])
-order_1 = ['equipment', 'info', 'monitor', 'work', 'work-extra', 'status', 'alarm', 'optimizers', '3fase', 'other']
-s_order = {v: i for i, v in enumerate(order_1)}
-lst_sorted_1 = sorted(data, key=lambda x: s_order[x[4]])
-print(tabulate(lst_sorted_1, headers=["Field", "", "mqtt publish", "Units", "Group"], tablefmt="github"))
+language = gettext.translation('messages', localedir='i18n', languages=[config.lang])
+language.install()
+_ = language.gettext
 
+df = pd.DataFrame(register_map)
+t = df.transpose()
+t.index.name = 'Sensor'
+t['mqtt publish'] = t['measurement']+'/'+t['fieldname']
+g = t.get(["name", "units", "mqtt publish", "measurement", "group"]).sort_values('group')
+m = t.get(["name", "units", "mqtt publish", "measurement", "group"]).sort_values('measurement')
 print()
-
-data = []
-for k in reg_map.keys():
-    data.append(
-        [reg_map[k]['measurement'], k, reg_map[k]['name'], f"{reg_map[k]['measurement']}/{reg_map[k]['fieldname']}",
-         reg_map[k]['units'], reg_map[k]['group']])
-
-order_2 = ['equipment', 'panels', 'inverter', 'grid', 'optimizer', 'status', 'alarm']
-s_order = {v: i for i, v in enumerate(order_2)}
-lst_sorted_2 = sorted(data, key=lambda x: s_order[x[0]])
-print(tabulate(lst_sorted_2, headers=["", "Field", "", "mqtt publish", "Units", "Group"], tablefmt="github"))
-
-
+print(_('Sorted by group'))
+print(g.to_markdown())
+print()
+print()
+print(_('Sorted by measurement'))
+print(m.to_markdown())
