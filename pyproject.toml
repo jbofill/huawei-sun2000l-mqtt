@@ -1,10 +1,29 @@
 [tool.poetry]
 name = "huawei-sun2000l-mqtt"
-version = "0.1.0"
+version = "0.1.5"
 description = ""
 authors = ["Jordi Bofill <jordi.bofill@gmail.com>"]
 readme = "README.md"
-packages = [{include = "huawei_sun2000l_mqtt"}]
+license = "GPL-3.0-or-later"
+homepage = "https://github.com/jbofill/huawei-sun2000l-mqtt"
+repository = "https://github.com/jbofill/huawei-sun2000l-mqtt"
+keywords = ["Huawei", "sun2000l", "inverter", "mqtt", "homeassistant"]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Topic :: Home Automation",
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: System Administrators"
+]
+include = [
+    "LICENSE",
+]
+packages = [
+    {include = "huawei_sun2000l_mqtt"},
+]
+
+[tool.poetry.scripts]
+setup_schedule = 'huawei_sun2000l_mqtt.setup_schedule:main'
 
 [tool.poetry.dependencies]
 python = "^3.8"
