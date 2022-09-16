@@ -3,8 +3,8 @@ import locale
 import gettext
 from langcodes import closest_supported_match
 from os import path
-import os
-localedir = os.path.join(os.path.dirname(__file__), "i18n")
+
+localedir = path.join(path.dirname(__file__), "i18n")
 langs = ['ca', 'es', 'en']
 current_locale, encoding = locale.getdefaultlocale()
 use_lang = closest_supported_match(current_locale, langs)
@@ -23,7 +23,6 @@ else:
     rewrite = input(_('Rewrite? [y/N] '))
     if not rewrite.lower() in ['y', 'yes']:
         exit()
-
 
 default_lang = ''
 if use_lang in langs:
