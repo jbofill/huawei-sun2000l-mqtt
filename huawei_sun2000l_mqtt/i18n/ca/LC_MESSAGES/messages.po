@@ -1,0 +1,344 @@
+# Catalan translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-09-13 12:21+0200\n"
+"PO-Revision-Date: 2022-09-04 14:15+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ca\n"
+"Language-Team: ca <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ha_sensors_and_buttons.py:35
+msgid "Grid consumption"
+msgstr ""
+
+#: setup.py:21
+msgid "Config files exists"
+msgstr ""
+
+#: setup.py:22
+msgid "Rewrite? [y/N] "
+msgstr ""
+
+#: setup.py:32
+#, fuzzy
+msgid "Language "
+msgstr "Idioma"
+
+#: setup.py:41
+msgid "Inverter ip? "
+msgstr ""
+
+#: setup.py:46
+#, python-format
+msgid "address is invalid: %s"
+msgstr "l'adreça és invàlida: %s"
+
+#: setup.py:52
+msgid "Inverter port? "
+msgstr ""
+
+#: setup.py:57
+msgid "Not a number"
+msgstr ""
+
+#: setup.py:73
+msgid "New config file created --> "
+msgstr ""
+
+#: setup_schedule.py:29
+msgid "Schedule config files exists"
+msgstr ""
+
+#: setup_schedule.py:34
+msgid "Update schedule"
+msgstr ""
+
+#: setup_schedule.py:35
+msgid "New schedule"
+msgstr ""
+
+#: setup_schedule.py:69
+msgid "Select:"
+msgstr ""
+
+#: setup_schedule.py:131
+msgid "Save schedule?"
+msgstr ""
+
+#: lib/Huawei.py:12
+msgid "Model"
+msgstr ""
+
+#: lib/Huawei.py:15
+msgid "Serial Number"
+msgstr "N-umero de serie"
+
+#: lib/Huawei.py:18
+msgid "Number of strings"
+msgstr ""
+
+#: lib/Huawei.py:21
+msgid "Rated power"
+msgstr ""
+
+#: lib/Huawei.py:24
+msgid "Maximum active power"
+msgstr ""
+
+#: lib/Huawei.py:27
+msgid "Maximum apparent power"
+msgstr ""
+
+#: lib/Huawei.py:30
+msgid "Maximum reactive power to grid"
+msgstr ""
+
+#: lib/Huawei.py:33
+msgid "Maximum reactive power from grid"
+msgstr ""
+
+#: lib/Huawei.py:36
+msgid "Insulation resistance"
+msgstr ""
+
+#: lib/Huawei.py:39
+msgid "Startup time"
+msgstr ""
+
+#: lib/Huawei.py:42
+msgid "Shutdown time"
+msgstr ""
+
+#: lib/Huawei.py:45
+msgid "Current time"
+msgstr ""
+
+#: lib/Huawei.py:48
+msgid "Number of optimizers"
+msgstr ""
+
+#: lib/Huawei.py:51
+msgid "Number of online optimizers"
+msgstr ""
+
+#: lib/Huawei.py:54
+msgid "Optimizer Feature data"
+msgstr ""
+
+#: lib/Huawei.py:57
+msgid "Status 1"
+msgstr ""
+
+#: lib/Huawei.py:60
+msgid "Status 2"
+msgstr ""
+
+#: lib/Huawei.py:63
+msgid "Status 3"
+msgstr ""
+
+#: lib/Huawei.py:66
+msgid "Alarm 1"
+msgstr ""
+
+#: lib/Huawei.py:69
+msgid "Alarm 2"
+msgstr ""
+
+#: lib/Huawei.py:72
+msgid "Alarm 3"
+msgstr ""
+
+#: lib/Huawei.py:75
+msgid "Device status"
+msgstr ""
+
+#: lib/Huawei.py:78
+msgid "Fault code"
+msgstr ""
+
+#: lib/Huawei.py:81
+msgid "PV1 voltage"
+msgstr ""
+
+#: lib/Huawei.py:84
+msgid "PV1 current"
+msgstr ""
+
+#: lib/Huawei.py:87
+msgid "PV2 voltage"
+msgstr ""
+
+#: lib/Huawei.py:90
+msgid "PV2 current"
+msgstr ""
+
+#: lib/Huawei.py:93
+msgid "Input power (entrada inversor)"
+msgstr ""
+
+#: lib/Huawei.py:96
+msgid "Line Voltage A-B"
+msgstr ""
+
+#: lib/Huawei.py:99
+msgid "Line Voltage B-C"
+msgstr ""
+
+#: lib/Huawei.py:102
+msgid "Line Voltage C-A"
+msgstr ""
+
+#: lib/Huawei.py:105
+msgid "Phase Voltage A"
+msgstr ""
+
+#: lib/Huawei.py:108
+msgid "Phase Voltage B"
+msgstr ""
+
+#: lib/Huawei.py:111
+msgid "Phase Voltage C"
+msgstr ""
+
+#: lib/Huawei.py:114
+msgid "Phase Current A"
+msgstr ""
+
+#: lib/Huawei.py:117
+msgid "Phase Current B"
+msgstr ""
+
+#: lib/Huawei.py:120
+msgid "Phase Current C"
+msgstr ""
+
+#: lib/Huawei.py:123
+msgid "Peak Power"
+msgstr "Potència pic"
+
+#: lib/Huawei.py:126
+msgid "Active power"
+msgstr ""
+
+#: lib/Huawei.py:129
+msgid "Reactive power"
+msgstr ""
+
+#: lib/Huawei.py:132
+msgid "Power Factor"
+msgstr ""
+
+#: lib/Huawei.py:135
+msgid "Grid frequency"
+msgstr ""
+
+#: lib/Huawei.py:138
+msgid "Efficiency"
+msgstr ""
+
+#: lib/Huawei.py:141
+msgid "Internal temperature"
+msgstr ""
+
+#: lib/Huawei.py:144
+msgid "Accumulated energy yield"
+msgstr ""
+
+#: lib/Huawei.py:147
+msgid "Daily energy yield"
+msgstr ""
+
+#: lib/Huawei.py:150
+msgid "Active Grid power (<0 obtaning)"
+msgstr ""
+
+#: lib/Huawei.py:153
+msgid "Active Grid reactive power"
+msgstr ""
+
+#: lib/Huawei.py:156
+msgid "Active Grid A Voltage"
+msgstr ""
+
+#: lib/Huawei.py:159
+msgid "Active Grid B Voltage"
+msgstr ""
+
+#: lib/Huawei.py:162
+msgid "Active Grid C Voltage"
+msgstr ""
+
+#: lib/Huawei.py:165
+msgid "Active Grid A Current"
+msgstr ""
+
+#: lib/Huawei.py:168
+msgid "Active Grid B Current"
+msgstr ""
+
+#: lib/Huawei.py:171
+msgid "Active Grid C Current"
+msgstr ""
+
+#: lib/Huawei.py:174
+msgid "Active Grid PF"
+msgstr ""
+
+#: lib/Huawei.py:177
+msgid "Active Grid Frequency"
+msgstr ""
+
+#: lib/Huawei.py:180
+msgid "Grid Accumulated Exported Energy"
+msgstr ""
+
+#: lib/Huawei.py:183
+msgid "Active Grid A-B Voltage"
+msgstr ""
+
+#: lib/Huawei.py:186
+msgid "Active Grid B-C Voltage"
+msgstr ""
+
+#: lib/Huawei.py:189
+msgid "Active Grid C-A Voltage"
+msgstr ""
+
+#: lib/Huawei.py:192
+msgid "Active Grid A power"
+msgstr ""
+
+#: lib/Huawei.py:195
+msgid "Active Grid B power"
+msgstr ""
+
+#: lib/Huawei.py:198
+msgid "Active Grid C power"
+msgstr ""
+
+#: lib/Huawei.py:201
+msgid "Grid Accumulated Energy"
+msgstr ""
+
+#~ msgid ""
+#~ "config.py not found. Copying config_example.py as config.py.\n"
+#~ "Update config.py:\n"
+#~ "# nano config/config.py\n"
+#~ "and try again."
+#~ msgstr ""
+
+#~ msgid "prova"
+#~ msgstr "Prvoant en cat"
+
