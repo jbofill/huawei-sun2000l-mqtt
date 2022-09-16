@@ -1,8 +1,10 @@
 # Solar Inverter Modbus Interface Definitions
 import gettext
 from huawei_sun2000l_mqtt.configs import config
+import os
 
-language = gettext.translation('messages', localedir='i18n', languages=[config.lang])
+localedir = os.path.join(os.path.dirname(__file__), "..", "i18n")
+language = gettext.translation('messages', localedir=localedir, languages=[config.lang])
 language.install()
 _ = language.gettext
 
@@ -199,7 +201,7 @@ register_map = {
               'description': _('Active Grid C power'), 'group': '3fase', 'scale': 1, 'type': 'I32', 'units': 'W', 'use': 'data',
               'method': 'hold'},
     'M_PTot': {'num': 13, 'measurement': 'grid', 'fieldname': 'accumulated_energy', 'addr': '37121', 'registers': 2,
-               'description':g _('Grid Accumulated Energy'), 'group': 'info', 'scale': 100, 'type': 'U32', 'units': 'kWh',
+               'description': _('Grid Accumulated Energy'), 'group': 'info', 'scale': 100, 'type': 'U32', 'units': 'kWh',
                'use': 'data', 'method': 'hold'}
 }
 

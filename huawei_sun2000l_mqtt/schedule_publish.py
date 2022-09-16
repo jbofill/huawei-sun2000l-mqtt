@@ -21,8 +21,6 @@ import threading
 ####################################################################
 # MSQTT Brocker
 ####################################################################
-
-
 def connect_mqtt():
     def on_connect(client, userdata, flags, rc):
         global mqtt_connected
@@ -32,6 +30,7 @@ def connect_mqtt():
             logging.info("Connected to MQTT Broker!")
         else:
             logging.warning(f"failed to connect, return code {rc}")
+
     client_mqtt_conn = mqtt_client.Client(client_id='{0}-{1}'.format(config.client_id, random.randint(1, 999)))
     client_mqtt_conn.username_pw_set(config.username, config.password)
     client_mqtt_conn.tls_set(config.ca_certs)
@@ -39,6 +38,7 @@ def connect_mqtt():
     client_mqtt_conn.on_connect = on_connect
     client_mqtt_conn.connect(config.broker, config.port)
     return client_mqtt_conn
+
 
 def publish_msg(pub_msg, topic=None):
     if not topic:
@@ -56,21 +56,10 @@ def publish_msg(pub_msg, topic=None):
         logging.info(pub_msg)
 
 
-if __name__ == "__main__":
-    logformat = "%(asctime)s %(threadName)s: %(message)s"
-    logging.basicConfig(format=logformat, level=logging.INFO, datefmt="%H:%M:%S")
-    topic_mqtt = 'sun2000l/query'
-    mqtt_connected = False
-    client_mqtt = connect_mqtt()
-    client_mqtt.subscribe([("sun2000l/query", 0)])
-    client_mqtt.loop_start()
-    while not mqtt_connected:
-        sleep(1)
-    threadLock = threading.Lock()
+def main():
     logging.info(f'{config_schedule.schedule}')
     threads = []
     threads_tnum = []
-    threads_delay = []
     for k in config_schedule.schedule:
         s = config_schedule.schedule[k]
         logging.info(f"Scheduling {k}: {s}")
@@ -79,9 +68,9 @@ if __name__ == "__main__":
             publish_msg(k)
             sleep(2)
         elif s.endswith('m'):
-            tnum = float(s.split('m')[0].strip())*60
+            tnum = float(s.split('m')[0].strip()) * 60
         elif s.endswith('h'):
-            tnum = float(s.split('h')[0].strip())*60*60
+            tnum = float(s.split('h')[0].strip()) * 60 * 60
         else:
             logging.warning(f'Unknown time value {s}')
         if tnum > 0.:
@@ -94,7 +83,7 @@ if __name__ == "__main__":
 
     logging.info(f'{len(threads)} threads')
     threads_time_sorted = [list(x) for x in zip(*sorted(zip(threads_tnum, threads), key=itemgetter(0), reverse=False))]
-    inicial_wait = 60./len(threads)
+    inicial_wait = 60. / len(threads)
     for x in threads:
         x.start()
         sleep(inicial_wait)
@@ -102,3 +91,17 @@ if __name__ == "__main__":
     sleeping = 600
     while True:
         time.sleep(sleeping)
+
+
+logformat = "%(asctime)s %(threadName)s: %(message)s"
+logging.basicConfig(format=logformat, level=logging.INFO, datefmt="%H:%M:%S")
+topic_mqtt = 'sun2000l/query'
+mqtt_connected = False
+client_mqtt = connect_mqtt()
+client_mqtt.subscribe([("sun2000l/query", 0)])
+client_mqtt.loop_start()
+while not mqtt_connected:
+    sleep(1)
+threadLock = threading.Lock()
+if __name__ == "__main__":
+    main()

@@ -3,13 +3,14 @@ import locale
 import gettext
 from langcodes import closest_supported_match
 from os import path
-
+import os
+localedir = os.path.join(os.path.dirname(__file__), "i18n")
 langs = ['ca', 'es', 'en']
 current_locale, encoding = locale.getdefaultlocale()
 use_lang = closest_supported_match(current_locale, langs)
 if not use_lang:
     use_lang = 'en'
-language = gettext.translation('messages', localedir='i18n', languages=[use_lang], fallback=True)
+language = gettext.translation('messages', localedir=localedir, languages=[use_lang], fallback=True)
 language.install()
 _ = language.gettext
 
