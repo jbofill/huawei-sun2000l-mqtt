@@ -24,6 +24,9 @@ packages = [
 
 [tool.poetry.scripts]
 setup_schedule = 'huawei_sun2000l_mqtt.setup_schedule:main'
+print_tables = 'huawei_sun2000l_mqtt.ha_sensors_and_buttons:main'
+schedule_publish = 'huawei_sun2000l_mqtt.schedule_publish:main'
+sun2000publish = 'huawei_sun2000l_mqtt.sun2000publish:main'
 
 [tool.poetry.dependencies]
 python = "^3.8"
