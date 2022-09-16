@@ -40,21 +40,23 @@ if not os.path.isdir(out_dir_sensors):
 file = ''
 out = None
 name1 = _("Grid consumption")
+name2 = _("Surplus to the grid")
+name3 = _("Home consumption")
 monitor_add = f'''
 - name: "{name1}"
   unique_id: "{name1}"
-  state_topic: "grid/consumption"
+  state_topic: "meter/consumption"
   unit_of_measurement: "W"
   state_class: "measurement"
   device_class: "power"
-- name: "Excedents a Xarxa"
-  unique_id: "Excedents a Xarxa"
-  state_topic: "grid/surplus"
+- name: "{name2}"
+  unique_id: "{name2}"
+  state_topic: "meter/surplus"
   unit_of_measurement: "W"
   state_class: "measurement"
   device_class: "power"
-- name: "Consum Casa"
-  unique_id: "Consum Casa"
+- name: "{name3}"
+  unique_id: "{name3}"
   state_topic: "home/consumption"
   unit_of_measurement: "W"
   state_class: "measurement"
@@ -73,7 +75,7 @@ for sensor in lst_sorted_3:
     out.write(f'  state_topic: "{sensor[4]}"\n')
     if sensor[5]:
         if sensor[0] == 'P_active':
-            sensor[5] = 'W'  # eos_inverter_mqtt.py converts P_active from kW to W
+            sensor[5] = 'W'  # sun2000publish.py converts P_active from kW to W
         out.write(f'  unit_of_measurement: "{sensor[5]}"\n')
     if sensor[7] == 'monitor':
         out.write(f'  state_class: "measurement"\n')

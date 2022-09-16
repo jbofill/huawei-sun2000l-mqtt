@@ -122,6 +122,7 @@ register_map = {
     'P_peak': {'num': 36, 'measurement': 'panels', 'fieldname': 'peak_power', 'addr': '32078', 'registers': 2,
                'description': _('Peak Power'), 'group': 'status', 'scale': 1000, 'type': 'I32', 'units': 'kW', 'use': 'data',
                'method': 'hold'},
+    # sun2000publish.py converts P_active from kW to W
     'P_active': {'num': 37, 'measurement': 'panels', 'fieldname': 'active_power', 'addr': '32080', 'registers': 2,
                  'description': _('Active power'), 'group': 'monitor', 'scale': 1000, 'type': 'I32', 'units': 'kW', 'use': 'data',
                  'method': 'hold'},
@@ -198,7 +199,7 @@ register_map = {
               'description': _('Active Grid C power'), 'group': '3fase', 'scale': 1, 'type': 'I32', 'units': 'W', 'use': 'data',
               'method': 'hold'},
     'M_PTot': {'num': 13, 'measurement': 'grid', 'fieldname': 'accumulated_energy', 'addr': '37121', 'registers': 2,
-               'description': _('Grid Accumulated Energy'), 'group': 'info', 'scale': 100, 'type': 'U32', 'units': 'kWh',
+               'description':g _('Grid Accumulated Energy'), 'group': 'info', 'scale': 100, 'type': 'U32', 'units': 'kWh',
                'use': 'data', 'method': 'hold'}
 }
 
